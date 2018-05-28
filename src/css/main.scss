@@ -1,0 +1,73 @@
+@import '_variables';
+@import '_grid';
+@import '_keyframes';
+@import '_mixins';
+@import '_placeholder';
+@import '_reset';
+
+// Styles
+.hero {
+  position: relative;
+  height: 100vh;
+  text-align: center;
+  color: $text--light;
+  &:before {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    content: '';
+    background: $hero__bg no-repeat center center;
+    background-size: cover;
+    animation: hero__bg 1.3s ease-in-out 1s forwards;
+  }
+  header {
+    padding: 20px;
+    .header__logo {
+      max-width: 39px;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: -11px;
+    }
+    @extend %nav;
+  }
+  article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include container(600px, -100px 0 0 -300px);
+    padding: 50px;
+    &:before,
+    &:after {
+      position: absolute;
+      width: 0%;
+      height: 0%;
+      content: '';
+      border-color: transparent;
+      border-style: solid;
+      animation: hero__outlines 1s ease-in 1s forwards;
+    }
+    &:before {
+      top: -20px;
+      left: -20px;
+      border-width: 1px 0 0 1px;
+    }
+    &:after {
+      bottom: -20px;
+      right: -20px;
+      border-width: 0 1px 1px 0;
+    }
+  }
+  .hero__heading,
+  .hero__text {
+    font-weight: 300;
+    text-shadow: $text__shadow;
+  }
+  .hero__heading {
+    font-size: 55px;
+    margin: 0 auto 45px;
+  }
+  .hero__text {
+    font-size: 25px;
+  }
+}

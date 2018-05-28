@@ -1,0 +1,91 @@
+/*   GRID
+______________________ */
+
+
+.grid,
+[class*="grid__col-"] {
+  display: inline-block;
+  display: flex;
+  zoom: 1;
+  position: relative;
+  width: 100%;
+}
+
+.grid {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+[class*="grid__col-"] {
+  flex-direction: column;
+  vertical-align: top;
+}
+
+// Mixin for Grid Columns
+@mixin grid__col($var: null) {
+  .grid__col-#{$var}auto {
+    -webkit-flex: 1 0 0px;
+        -ms-flex: 1 0 auto;
+        -ms-flex: 1 0 0px;
+            flex: 1 0 0px;  
+    width: auto;
+    max-width: 100%;
+  }
+  .grid__col-#{$var}1 {
+    width: 8.33333333%;
+  }
+  .grid__col-#{$var}2 {
+    width: 16.66666667%;
+  }
+  .grid__col-#{$var}3 {
+    width: 25%;
+  }
+  .grid__col-#{$var}4 {
+    width: 33.33333333%;
+  }
+  .grid__col-#{$var}5 {
+    width: 41.66666667%;
+  }
+  .grid__col-#{$var}6 {
+    width: 50%;
+  }
+  .grid__col-#{$var}7 {
+    width: 58.33333333%;
+  }
+  .grid__col-#{$var}8 {
+    width: 66.66666667%;
+  }
+  .grid__col-#{$var}9 {
+    width: 75%;
+  }
+  .grid__col-#{$var}10 {
+    width: 83.33333333%;
+  }
+  .grid__col-#{$var}11 {
+    width: 91.66666667%;
+  }
+  .grid__col-#{$var}12 {
+    width: 100%;
+  }
+}
+
+// Grid Column Declarations
+@include grid__col;
+
+
+// Viewport Declarations
+@media only screen and (max-width: $screen-xs-max) {
+  @include grid__col(xs-);
+}
+
+@media only screen and (min-width: $screen-sm-min) {
+  @include grid__col(sm-);
+}
+
+@media only screen and (min-width: $screen-md-min) {
+  @include grid__col(md-);
+}
+
+@media only screen and (min-width: $screen-lg-min) {
+  @include grid__col(lg-);
+}
