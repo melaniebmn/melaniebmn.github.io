@@ -71,3 +71,16 @@
     font-size: 25px;
   }
 }
+
+.footer {
+  padding: 25px;
+  background: $footer__bg;
+  color: $text--light;
+  div {
+    @extend %nav;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
