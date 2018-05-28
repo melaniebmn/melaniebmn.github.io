@@ -72,6 +72,27 @@
   }
 }
 
+.contact {
+  background: $hero__bg no-repeat bottom center;
+  background-size: cover;
+  text-align: center;
+  padding: 50px 15px 65px;
+  h3 {
+    @include container(280px);
+    font: 300 35px/2 $font--primary;
+    text-shadow: $text__shadow;
+    color: $text--light;
+    border-bottom: 2px solid $text--light;
+    transition: max-width .5s;
+    &:hover {
+      max-width: 380px;
+    }
+    a {
+      color: inherit;
+    }
+  }
+}
+
 .footer {
   padding: 25px;
   background: $footer__bg;
