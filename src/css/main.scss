@@ -158,10 +158,13 @@ ______________________ */
         background: rgba(0, 0, 0, .85);
       }
     }
-    &.projects__project--1 {
+    &.projects__project--peaktrails {
+      background: url('../img/peaktrails.png') no-repeat center center;
+    }
+    &.projects__project--said-the-whale {
       background: url('../img/said-the-whale.jpg') no-repeat top center;
     }
-    &.projects__project--2 {
+    &.projects__project--parasail {
       background: url('../img/parasail-css-framework.jpg') no-repeat center center;
     }
   }
