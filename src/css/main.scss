@@ -31,6 +31,9 @@ ______________________ */
       font-size: 40px;
       font-weight: 400;
       letter-spacing: -11px;
+      @media only screen and (max-width: 767px) {
+        margin: 0 auto;
+      }
     }
     @extend %nav;
   }
@@ -40,6 +43,13 @@ ______________________ */
     left: 50%;
     @include container(600px, -100px 0 0 -300px);
     padding: 50px;
+    @media only screen and (max-width: 767px) {
+      top: auto;
+      left: 15%;
+      width: 70%;
+      margin: 85px auto;
+      padding: 30px;
+    }
     &:before,
     &:after {
       position: absolute;
@@ -157,15 +167,46 @@ ______________________ */
         opacity: 1;
         background: rgba(0, 0, 0, .85);
       }
+      @media only screen and (max-width: 767px) {
+        opacity: 1;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        h3 {
+          font: 700 23px/1.3 $font--primary;
+        }
+        p,
+        ul li {
+          font-weight: 400;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        p {
+          display: none;
+        }
+        ul {
+          margin: 15px auto 0;
+        }
+      }
+      @media only screen and (max-width: 463px) {
+        .btn:nth-of-type(2) {
+          position: relative;
+          left: calc(50% - 35px);
+        }
+      }
     }
     &.projects__project--peaktrails {
       background: url('../img/peaktrails.png') no-repeat center center;
+      background-size: cover;
     }
     &.projects__project--said-the-whale {
       background: url('../img/said-the-whale.jpg') no-repeat top center;
+      background-size: cover;
     }
     &.projects__project--parasail {
       background: url('../img/parasail-css-framework.jpg') no-repeat center center;
+      background-size: cover;
     }
   }
 }
@@ -208,5 +249,8 @@ ______________________ */
   }
   p {
     font: 300 14px/1.5 $font--primary;
+    @media only screen and (max-width: 767px) {
+      align-items: center;
+    }
   }
 }

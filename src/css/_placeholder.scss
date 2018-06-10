@@ -8,11 +8,18 @@ ______________________ */
   nav {
     align-items: flex-end;
     justify-content: center;
+    @media only screen and (max-width: 767px) {
+      align-items: center;
+      margin: 25px auto 15px;
+    }
   }
   ul {
     max-width: 300px;
     li {
       align-items: flex-end;
+      @media only screen and (max-width: 767px) {
+        align-items: center;
+      }
       &:nth-child(1) a {
         @include logo($icon--linkedin, 25px, 25px);
       }
