@@ -20,7 +20,7 @@ ______________________ */
     width: 100%;
     height: inherit;
     content: '';
-    background: $hero__bg no-repeat center center;
+    background: #050505 $hero__bg no-repeat center center;
     background-size: cover;
     @media only screen and (min-width: 768px) {
       animation: hero__bg 1.3s ease-in-out 1s forwards;
