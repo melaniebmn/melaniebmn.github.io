@@ -313,70 +313,49 @@ ______________________ */
   .hero header ul, .footer div ul {
     max-width: 300px; }
     .hero header ul li, .footer div ul li {
-      align-items: flex-end; }
-      @media only screen and (max-width: 767px) {
-        .hero header ul li, .footer div ul li {
-          align-items: center; } }
-      .hero header ul li:nth-child(1) a, .footer div ul li:nth-child(1) a {
-        display: block;
-        width: 25px;
-        height: 25px;
-        text-indent: -9999px; }
-        .hero header ul li:nth-child(1) a:before, .footer div ul li:nth-child(1) a:before {
-          float: left;
-          display: block;
-          width: 100%;
-          height: 100%;
-          content: '';
-          background: url(5d6a77224136236bd2bbc9ed6a45a19b.png) no-repeat;
-          background-size: 100% auto;
-          text-indent: 0; }
-      .hero header ul li:nth-child(2) a, .footer div ul li:nth-child(2) a {
-        display: block;
-        width: 25px;
-        height: 25px;
-        text-indent: -9999px; }
-        .hero header ul li:nth-child(2) a:before, .footer div ul li:nth-child(2) a:before {
-          float: left;
-          display: block;
-          width: 100%;
-          height: 100%;
-          content: '';
-          background: url(7d085991223c793baea81ff0a2e495fa.png) no-repeat;
-          background-size: 100% auto;
-          text-indent: 0; }
-      .hero header ul li:nth-child(3) a, .footer div ul li:nth-child(3) a {
-        display: block;
-        width: 25px;
-        height: 25px;
-        text-indent: -9999px; }
-        .hero header ul li:nth-child(3) a:before, .footer div ul li:nth-child(3) a:before {
-          float: left;
-          display: block;
-          width: 100%;
-          height: 100%;
-          content: '';
-          background: url(cfe0a8dd5eed9720358993fca88c9ace.png) no-repeat;
-          background-size: 100% auto;
-          text-indent: 0; }
-      .hero header ul li:nth-child(4) a, .footer div ul li:nth-child(4) a {
-        display: block;
-        width: 25px;
-        height: 25px;
-        text-indent: -9999px; }
-        .hero header ul li:nth-child(4) a:before, .footer div ul li:nth-child(4) a:before {
-          float: left;
-          display: block;
-          width: 100%;
-          height: 100%;
-          content: '';
-          background: url(2e608a64ca5267b4ff13fd80574d1158.png) no-repeat;
-          background-size: 100% auto;
-          text-indent: 0; }
-      .hero header ul li a, .footer div ul li a {
-        transition: opacity .5s; }
-        .hero header ul li a:hover, .footer div ul li a:hover {
-          opacity: .5; }
+      width: 45px;
+      height: 45px;
+      margin: 0 15px; }
+    .hero header ul a, .footer div ul a {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      perspective-origin: 50px 50px;
+      transform-origin: 50px 50px;
+      transform-style: preserve-3d;
+      transition: transform .2s ease-out 0s; }
+      .hero header ul a .icon--front, .footer div ul a .icon--front,
+      .hero header ul a .icon--back,
+      .footer div ul a .icon--back {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        transition: background .2s ease-out 0s; }
+      .hero header ul a .icon--front, .footer div ul a .icon--front {
+        transform: translate3d(0px, 0px, 30px) rotateY(0deg);
+        background: white; }
+      
+      .hero header ul a .icon--back,
+      .footer div ul a .icon--back {
+        transform: translate3d(29px, 0px, 20px) rotateY(90deg);
+        background: #323232; }
+      .hero header ul a:hover, .footer div ul a:hover {
+        transform: rotateY(-90deg);
+        transition-delay: .35s; }
+        .hero header ul a:hover .icon--front, .footer div ul a:hover .icon--front,
+        .hero header ul a:hover .icon--back,
+        .footer div ul a:hover .icon--back {
+          transition-delay: .35s; }
+        .hero header ul a:hover .icon--front, .footer div ul a:hover .icon--front {
+          background: #323232; }
+        
+        .hero header ul a:hover .icon--back,
+        .footer div ul a:hover .icon--back {
+          background: white; }
 
 /*   RESET
 ______________________ */
@@ -437,7 +416,7 @@ ______________________ */
     width: 100%;
     height: inherit;
     content: '';
-    background: #050505 url(317297562ea9cd98650bc9d7657afa56.jpg) no-repeat center center;
+    background: #050505 url(c629469581f660ef19df5f415a029913.jpg) no-repeat center center;
     background-size: cover; }
     @media only screen and (min-width: 768px) {
       .hero:before {
@@ -510,14 +489,27 @@ ______________________ */
       position: relative;
       font: 400 80px/1 "Open Sans", Arial; }
   .work .work__project {
-    position: relative;
-    height: 325px; }
+    position: relative; }
+    @media only screen and (min-width: 768px) {
+      .work .work__project {
+        height: 365px; } }
     .work .work__project:not(:last-of-type) {
       margin: 0 0 65px; }
+    .work .work__project:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: ''; }
+      @media only screen and (max-width: 767px) {
+        .work .work__project:before {
+          height: 150px; } }
     .work .work__project .project__container {
+      position: relative;
       opacity: 0;
-      width: 80%;
-      max-width: 600px;
+      width: 85%;
+      max-width: 800px;
       height: 100%;
       padding: 25px 45px;
       color: #fff;
@@ -528,7 +520,7 @@ ______________________ */
       .work .work__project .project__container h3 {
         font: 400 25px/1.3 "Open Sans", Arial; }
       .work .work__project .project__container p {
-        margin: 25px 0 20px; }
+        margin: 15px 0 20px; }
       .work .work__project .project__container ul li {
         list-style: disc;
         margin: 0 0 10px 20px; }
@@ -548,6 +540,9 @@ ______________________ */
             fill: none;
             stroke: #fff;
             stroke-width: 2px; }
+            @media only screen and (max-width: 767px) {
+              .work .work__project .project__container .btn svg polygon {
+                stroke: #404041; } }
         .work .work__project .project__container .btn span {
           position: relative; }
         .work .work__project .project__container .btn:hover {
@@ -567,36 +562,36 @@ ______________________ */
           opacity: 1;
           width: 100%;
           max-width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.8); }
+          padding: 185px 35px 0;
+          color: #404041; }
           .work .work__project .project__container h3 {
             font: 700 23px/1.3 "Open Sans", Arial; }
           .work .work__project .project__container p,
           .work .work__project .project__container ul li {
-            font-weight: 400; } }
-      @media only screen and (max-width: 600px) {
-        .work .work__project .project__container p {
-          display: none; }
-        .work .work__project .project__container ul {
-          margin: 15px auto 0; } }
+            font-weight: 400; }
+          .work .work__project .project__container p {
+            margin: 15px 0; } }
       @media only screen and (max-width: 463px) {
         .work .work__project .project__container .btn:nth-of-type(2) {
           position: relative;
           left: calc(50% - 35px); } }
-    .work .work__project.projects__project--peaktrails {
+    .work .work__project.projects__project--bright-wing:before {
+      background: url(3786d15210b326d9e996d4d42309e617.jpg) no-repeat center center;
+      background-size: cover; }
+    .work .work__project.projects__project--parasail:before {
+      background: url(364580a675a34aade1bca3d56dc66114.jpg) no-repeat center center;
+      background-size: cover; }
+    .work .work__project.projects__project--peaktrails:before {
       background: url(16909fc810148d762c9cc4714cdf7a68.png) no-repeat center center;
       background-size: cover; }
-    .work .work__project.projects__project--said-the-whale {
+    .work .work__project.projects__project--said-the-whale:before {
       background: url(d304d4760e72ba9c793cef941aac3da6.jpg) no-repeat top center;
-      background-size: cover; }
-    .work .work__project.projects__project--parasail {
-      background: url(364580a675a34aade1bca3d56dc66114.jpg) no-repeat center center;
       background-size: cover; }
 
 /*   SECTION - CONTACT
 ______________________ */
 .contact {
-  background: url(317297562ea9cd98650bc9d7657afa56.jpg) no-repeat bottom center;
+  background: url(c629469581f660ef19df5f415a029913.jpg) no-repeat bottom center;
   background-size: cover;
   text-align: center;
   padding: 50px 15px 65px; }
@@ -621,7 +616,8 @@ ______________________ */
   background: #050605;
   color: #fff; }
   .footer p {
-    font: 300 14px/1.5 "Open Sans", Arial; }
+    font: 300 14px/1.5 "Open Sans", Arial;
+    justify-content: center; }
     @media only screen and (max-width: 767px) {
       .footer p {
         align-items: center; } }
