@@ -5,6 +5,9 @@ ______________________ */
 %nav {
   width: 85%;
   margin: 0 auto;
+  @media only screen and (max-width: 400px) {
+    width: 100%;
+  }
   nav {
     align-items: flex-end;
     justify-content: center;
@@ -15,10 +18,16 @@ ______________________ */
   }
   ul {
     max-width: 300px;
+    @media only screen and (max-width: 400px) {
+      justify-content: center;
+    }
     li {
       width: 45px;
       height: 45px;
       margin: 0 15px;
+      @media only screen and (max-width: 400px) {
+        margin: 0 10px;
+      }
     }
     a {
       position: relative;
