@@ -107,14 +107,28 @@ ______________________ */
   }
   .work__project {
     position: relative;
-    height: 325px;
+    @media only screen and (min-width: 768px) {
+      height: 365px;
+    }
     &:not(:last-of-type) {
       margin: 0 0 65px;
     }
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      @media only screen and (max-width: 767px) {
+        height: 150px;
+      }
+    }
     .project__container {
+      position: relative;
       opacity: 0;
-      width: 80%;
-      max-width: 600px;
+      width: 85%;
+      max-width: 800px;
       height: 100%;
       padding: 25px 45px;
       color: $text--light;
@@ -127,7 +141,7 @@ ______________________ */
         font: 400 25px/1.3 $font--primary;
       }
       p {
-        margin: 25px 0 20px;
+        margin: 15px 0 20px;
       }
       ul li {
         list-style: disc;
@@ -149,6 +163,9 @@ ______________________ */
             fill: none;
             stroke: $text--light;
             stroke-width: 2px;
+            @media only screen and (max-width: 767px) {
+              stroke: $text--color;
+            }
           }
         }
         span {
@@ -176,8 +193,8 @@ ______________________ */
         opacity: 1;
         width: 100%;
         max-width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, .8);
+        padding: 185px 35px 0;
+        color: $text--color;
         h3 {
           font: 700 23px/1.3 $font--primary;
         }
@@ -185,13 +202,8 @@ ______________________ */
         ul li {
           font-weight: 400;
         }
-      }
-      @media only screen and (max-width: 600px) {
         p {
-          display: none;
-        }
-        ul {
-          margin: 15px auto 0;
+          margin: 15px 0;
         }
       }
       @media only screen and (max-width: 463px) {
@@ -201,16 +213,20 @@ ______________________ */
         }
       }
     }
-    &.projects__project--peaktrails {
+    &.projects__project--bright-wing:before {
+      background: url('../img/bright-wing.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    &.projects__project--parasail:before {
+      background: url('../img/parasail-css-framework.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    &.projects__project--peaktrails:before {
       background: url('../img/peaktrails.png') no-repeat center center;
       background-size: cover;
     }
-    &.projects__project--said-the-whale {
+    &.projects__project--said-the-whale:before {
       background: url('../img/said-the-whale.jpg') no-repeat top center;
-      background-size: cover;
-    }
-    &.projects__project--parasail {
-      background: url('../img/parasail-css-framework.jpg') no-repeat center center;
       background-size: cover;
     }
   }
@@ -254,6 +270,7 @@ ______________________ */
   }
   p {
     font: 300 14px/1.5 $font--primary;
+    justify-content: center;
     @media only screen and (max-width: 767px) {
       align-items: center;
     }
